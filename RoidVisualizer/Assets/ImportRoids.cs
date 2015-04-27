@@ -35,19 +35,22 @@ public class ImportRoids : MonoBehaviour {
 			Vector3 pos = new Vector3(x/10000f,y/10000f,z/10000f);
 			GameObject roid = (GameObject)GameObject.Instantiate(prefab.gameObject, pos, Quaternion.identity);
 			roid.name = name;
+			roid.GetComponentInChildren<TextMesh>().text = name;
 			textElements.Add(name);
 			posElements.Add(pos);
 		}
 	}
 
+	/*
+	//DEPRECIATED!! Use the prefab text
 	void OnGUI () {
 		for (int i = 0; i < textElements.Count; i ++) {
 			Vector3 actualPos = posElements[i];
 			Vector3 marker = gameObject.GetComponent<Camera>().WorldToScreenPoint(actualPos);
-			//if () {
+			if (marker.x < 0 && marker.x <= Screen.width) {
 				GUI.Label(new Rect(marker.x, Screen.height - marker.y, 100,100), textElements[i]);
-			//}
+			}
 		}
 	}
-
+	*/
 }
