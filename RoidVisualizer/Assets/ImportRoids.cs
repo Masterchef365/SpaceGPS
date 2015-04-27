@@ -44,9 +44,9 @@ public class ImportRoids : MonoBehaviour {
 		for (int i = 0; i < textElements.Count; i ++) {
 			Vector3 actualPos = posElements[i];
 			Vector3 marker = gameObject.GetComponent<Camera>().WorldToScreenPoint(actualPos);
-			if () {
+			//if () {
 				GUI.Label(new Rect(marker.x, Screen.height - marker.y, 100,100), textElements[i]);
-			}
+			//}
 		}
 	}
 
