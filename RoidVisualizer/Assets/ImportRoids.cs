@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class ImportRoids : MonoBehaviour {
 	public GameObject prefab;
+	public GameObject prefab2;
 	public List<string> textElements = new List<string>();
 	public List<Vector3> posElements = new List<Vector3>();
 
@@ -32,8 +33,10 @@ public class ImportRoids : MonoBehaviour {
 			float.TryParse(coord[2], out x);
 			float.TryParse(coord[3], out y);
 			float.TryParse(coord[4], out z);
-			Vector3 pos = new Vector3(x/10000f,y/10000f,z/10000f);
+			Vector3 pos = new Vector3(x/1000f,y/1000f,z/1000f);
 			GameObject roid = (GameObject)GameObject.Instantiate(prefab.gameObject, pos, Quaternion.identity);
+			GameObject roidLabel = (GameObject)GameObject.Instantiate(prefab2.gameObject, pos, Quaternion.identity);
+			roidLabel.transform.parent = roid.transform;
 			roid.name = name;
 			roid.GetComponentInChildren<TextMesh>().text = name;
 			textElements.Add(name);
