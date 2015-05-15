@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class ImportRoids : MonoBehaviour {
 	public GameObject prefab;
-	public GameObject prefab2;
 	public List<string> textElements = new List<string>();
 	public List<Vector3> posElements = new List<Vector3>();
 
